@@ -3,37 +3,61 @@ using namespace std;
 
 class Student
 {
-
 public:
     int id;
     char name[101];
     int age;
-    char subject;
+    string subject;
     int roll;
     int cls;
+
+    Student(int i, char *n, int a, string s, int r, int c)
+    {
+        id = i;
+        strcpy(name, n);
+        age = a;
+        subject = s;
+        roll = r;
+        cls = c;
+    }
+
+    void show()
+    {
+        cout << id << " " << name << " " << age << " " << subject << " " << roll << " " << cls << endl;
+    }
 };
 
 int main()
 {
-    Student s, m;
-    s.id = 25;
-    char nm[101] = "Srayo";
-    strcpy(s.name, nm);
-    s.age = 10;
-    s.subject = 'c';
-    s.roll = 14;
-    s.cls = 12;
-
-    cout << s.id << " " << s.name << " " << s.age << " " << s.subject << " " << s.roll << " " << s.cls << endl;
-
-    m.id = 25;
-    char nms[101] = "Mari";
-    strcpy(m.name, nms);
-    m.age = 10;
-    m.subject = 'b';
-    m.roll = 14;
-    m.cls = 12;
-
-    cout << m.id << " " << m.name << " " << m.age << " " << m.subject << " " << m.roll << " " << m.cls << endl;
+    Student srayo(4, "srayo", 4, "s", 4, 4);
+    srayo.show();
     return 0;
 }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// class Student
+// {
+//     public:
+//         char name[100];
+//         int roll;
+//         int cls;
+//         char section;
+
+//         Student(int r,int s,int c,char* n)
+//         {
+//             roll=r;
+//             section=s;
+//             cls=c;
+//             strcpy(name,n);
+//         }
+// };
+// int main()
+// {
+//     Student rahim(29,'A',7,"Rahim Ullah");
+//     Student karim(55,'D',7,"Karim Cholimullah");
+
+//     cout<<karim.roll<<endl;
+//     cout<<rahim.roll<<endl;
+//     return 0;
+// }
